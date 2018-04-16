@@ -109,7 +109,6 @@ xyplot(calCurveCart)
 ##############################################
 ###### LDA                              ######
 ##############################################
-##Not Working
 ldamodA <- caret::train(Sold~.,
                  data = training_base
                  , method = "lda"
@@ -158,7 +157,6 @@ tecm_mlp <- confusionMatrix(mlpClassesTest, testing_base$Sold)
 calCurveMLP = calibration(testing_base$Sold ~ mlpProbsTest, cuts=20)
 xyplot(calCurveMLP)
 
-##Not Working
 ### Model Scoring and Evaluation
 testStats <- rbind(
   t(rbind(data.frame(logit=tecm_logit$overall), data.frame(logit=tecm_logit$byClass))),
